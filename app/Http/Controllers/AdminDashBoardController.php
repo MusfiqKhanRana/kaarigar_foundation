@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\AdminDashBoard;
+use App\Models\Contact;
+use App\Models\Donate;
 use Illuminate\Http\Request;
 
 class AdminDashBoardController extends Controller
@@ -85,5 +87,34 @@ class AdminDashBoardController extends Controller
 
     public function pages(){
         return view('admin_pages.pages');
+    }
+
+    public function index_page_edit(){
+        return view('admin_pages.index_page_edit');
+    }
+    public function programs_page_edit(){
+        return view('admin_pages.programs_page_edit');
+    }
+    public function get_involve_page_edit(){
+        return view('admin_pages.get_involve_page_edit');
+    }
+    public function projects_page_edit(){
+        return view('admin_pages.projects_page_edit');
+    }
+    public function about_page_edit(){
+        return view('admin_pages.about_page_edit');
+    }
+    public function blog_page_edit(){
+        return view('admin_pages.blog_page_edit');
+    }
+    public function donate_page(){
+        $donate=Donate::all();
+        // dd($donate);
+        return view('admin_pages.donate_show',compact('donate'));
+    }
+    public function contact_page(){
+        $contact=Contact::all();
+        // dd($contact);
+        return view('admin_pages.contact_show',compact('contact'));
     }
 }

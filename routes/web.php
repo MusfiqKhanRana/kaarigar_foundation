@@ -25,7 +25,15 @@ use Illuminate\Support\Facades\Route;
 Route::resource('/',IndexController::class);
 Route::resource('about',AboutController::class);
 Route::resource('blog',BlogController::class);
-Route::get('admindashboard/pages',[AdminDashBoardController::class,'pages'])->name('admindashboard.pages')
+Route::get('admindashboard/donate_show',[AdminDashBoardController::class,'donate_page'])->name('admindashboard.show.donate');
+Route::get('admindashboard/contact_show',[AdminDashBoardController::class,'contact_page'])->name('admindashboard.show.contact');
+Route::get('admindashboard/blog',[AdminDashBoardController::class,'blog_page_edit'])->name('admindashboard.edit.blog_page');
+Route::get('admindashboard/about',[AdminDashBoardController::class,'about_page_edit'])->name('admindashboard.edit.about_page');
+Route::get('admindashboard/projects',[AdminDashBoardController::class,'projects_page_edit'])->name('admindashboard.edit.projects_page');
+Route::get('admindashboard/get_involved',[AdminDashBoardController::class,'get_involve_page_edit'])->name('admindashboard.edit.get_involve_page');
+Route::get('admindashboard/programs',[AdminDashBoardController::class,'programs_page_edit'])->name('admindashboard.edit.programs_page');
+Route::get('admindashboard/index',[AdminDashBoardController::class,'index_page_edit'])->name('admindashboard.edit.index_page');
+Route::get('admindashboard/pages',[AdminDashBoardController::class,'pages'])->name('admindashboard.pages');
 Route::resource('admindashboard',AdminDashBoardController::class);
 Route::post('contact/store',[ContactController::class,'contact_store'])->name('contacts.store');
 Route::resource('contact',ContactController::class);

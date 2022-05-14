@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -34,7 +35,33 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    //    dd($request);
+    //    $request->validate([
+    //         'b_img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    //         'blogs_img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+    //     ]);
+
+        if ($image = $request->b_img) {
+            $destinationPath = 'images/blog_images';
+            $b_img = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $b_img);
+            $request->b_img = "$b_img";
+        }
+        // dd($data);
+        if ($image = $request->blogs_img) {
+            $destinationPathxx = 'images/blog_images';
+            $blogs_img = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPathxx, $blogs_img);
+            $request->blogs_img = "$blogs_img";
+        }
+        Blog::create([
+            'b_img'=>$request->b_img,
+            'tag_line'=>$request->tag_line,
+            'quote_line'=>$request->quote_line,
+            'blogs_img' =>$request->blogs_img,
+            'blogs_content' =>$request->blogs_content
+        ]);
+        return redirect()->back()->withmsg('Successfully Done');
     }
 
     /**

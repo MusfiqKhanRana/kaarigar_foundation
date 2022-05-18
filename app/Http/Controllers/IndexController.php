@@ -89,7 +89,7 @@ class IndexController extends Controller
     }
     public function donate_submit(Request $request){
         // dd($request);
-        Donate::create(['donation_amount'=>$request->donation_amount,'f_name'=>$request->f_name,'l_name'=>$request->l_name,'email'=>$request->email,'address'=>$request->address,'massage'=>$request->massage,'b_tnumber'=>$request->b_tnumber,'r_tnumber'=>$request->r_tnumber,'n_tnumber'=>$request->n_tnumber]);
+        Donate::create(['programs'=>$request->programs,'donation_amount'=>$request->donation_amount,'f_name'=>$request->f_name,'l_name'=>$request->l_name,'email'=>$request->email,'address'=>$request->address,'massage'=>$request->massage,'b_tnumber'=>$request->b_tnumber,'r_tnumber'=>$request->r_tnumber,'n_tnumber'=>$request->n_tnumber]);
         return redirect()->back()->withmsg('Successfully Done');
     }
     public function disaster(){

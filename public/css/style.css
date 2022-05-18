@@ -622,6 +622,10 @@ figure {
 #fh5co-primary-menu .fh5co-sub-menu a:hover {
   color: #ff5722 !important;
 }
+.footer_ele a:hover {
+  color: #050000 !important;
+  text-decoration: underline;
+}
 .fh5co-sub-menu a:active {
   color: #ff22bd !important;
   text-decoration: underline;

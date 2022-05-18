@@ -82,7 +82,7 @@
 				</div>
 			</div>
 		</div>
-		<header id="fh5co-header-section" class="sticky-banner">
+		<header id="fh5co-header-section" style="z-index:2" class="sticky-banner">
 			<div class="container">
 				<div class="nav-header">
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
@@ -135,10 +135,14 @@
 		<div class="fh5co-hero">
 			<div class="fh5co-overlay"></div>
 			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/kf2.jpeg);  filter: blur(2px);  -webkit-filter: blur(2px);"></div>
-				<div class="desc animate-box">
+			<video class="fh5co-cover text-center" data-stellar-background-ratio="0.5" filter: blur(2px);  -webkit-filter: blur(2px); playsinline autoplay muted loop poster="images/kf2.jpeg">
+				<source src="videos/Zakat.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+				<div class="desc animate-box" style="z-index:- 10!important">
 					<h2 style="color: white"><strong>Donate</strong> for the <strong>Poor Children</strong></h2>
 				
-					<span><a class="btn btn-primary btn-lg" href="{{route('donate')}}">Donate Now</a></span>
+					<span><a class="btn btn-primary btn-lg"  href="{{route('donate')}}">Donate Now</a></span>
 				</div>
 			
 

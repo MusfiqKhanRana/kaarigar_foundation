@@ -35,7 +35,7 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-    //    dd($request);
+       dd($request);
     //    $request->validate([
     //         'b_img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     //         'blogs_img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
@@ -107,5 +107,8 @@ class BlogController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function blog_posts(Request $request){
+        dd($request);
     }
 }

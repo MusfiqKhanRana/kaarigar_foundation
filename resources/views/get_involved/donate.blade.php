@@ -17,6 +17,15 @@
                             @csrf
                               <div style="background-color: black;color:white; padding:5%">
                                 <div class="col-12 form-group">
+                                    <select name="programs" id="" class="form-control">
+                                      <option value="">Select A Program You Want to Donate to.</option>
+                                      <option value="women_employment">Women Employment</option>
+                                      <option value="child_education">Child Education</option>
+                                      <option value="natural_disaster">Natural Disaster</option>
+                                      <option value="proper_parenting">Proper Parenting</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 form-group">
                                     <input type="text" class="form-control" name="donation_amount" placeholder="Enter Donation Amount">
                                 </div>
                                 <div class="row" style="margin-top: 3%">

@@ -19,6 +19,7 @@ class CreateDonatesTable extends Migration
             $table->text('f_name')->nullable();
             $table->text('l_name')->nullable();
             $table->string('email')->nullable();
+            $table->string('programs')->nullable();
             $table->string('address')->nullable();
             $table->longText('massage')->nullable();
             $table->string('b_tnumber')->nullable();

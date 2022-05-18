@@ -24,20 +24,31 @@
                         <label for="exampleFormControlFile1">Qoute Line *</label>
                         <input type="text" name="quote_line" class="form-control">
                     </div>
-                    <div class="mb-4">
-                        <label for="exampleFormControlFile1">Blogs Image Upload*</label>
-                        <input type="file" name="blogs_img" class="form-control-file" id="exampleFormControlFile1">
-                    </div>
-                    <div class="mb-4">
-                        <label for="exampleFormControlFile1">Blogs Line *</label>
-                        <input type="text" name="blogs_content" class="form-control">
-                    </div>
                     <div class="mb-4" style="align-content: center">
                         <button type="submit" class="btn btn-success">Submit</button>
                     </div>
                 </form>
                     {{-- <textarea name="" id="ck_editor" cols="30" rows="10" style="color: black!important"></textarea> --}}
                 </div>
+                <br><hr><br>
+                <div class="col-md-12">
+                  <h3>Add new Posts</h3>
+                  <form method="POST" action="{{route('blog.blog_posts')}}" enctype="multipart/form-data">
+                      @csrf
+                      <div class="mb-4">
+                          <label for="exampleFormControlFile1">Blogs Image Upload*</label>
+                          <input type="file" name="blogs_img" class="form-control-file" id="exampleFormControlFile1">
+                      </div>
+                      <div class="mb-4">
+                          <label for="exampleFormControlFile1">Blogs Line *</label>
+                          <input type="text" name="blogs_content" class="form-control">
+                      </div>
+                      <div class="mb-4" style="align-content: center">
+                          <button type="submit" class="btn btn-success">Submit</button>
+                      </div>
+                  </form>
+                      {{-- <textarea name="" id="ck_editor" cols="30" rows="10" style="color: black!important"></textarea> --}}
+                  </div>
               </div>
             </div>
             <div class="card-body">

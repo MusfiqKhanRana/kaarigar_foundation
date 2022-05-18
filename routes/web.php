@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::resource('/',IndexController::class);
 Route::resource('about',AboutController::class);
+Route::post('blog/blog_posts',[BlogController::class,'blog_posts'])->name('blog.blog_posts');
 Route::resource('blog',BlogController::class);
 Route::get('admindashboard/donate_show',[AdminDashBoardController::class,'donate_page'])->name('admindashboard.show.donate');
 Route::get('admindashboard/contact_show',[AdminDashBoardController::class,'contact_page'])->name('admindashboard.show.contact');

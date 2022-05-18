@@ -15,6 +15,7 @@
                       <tr>
                         <th scope="col" style="color: white">#</th>
                         <th scope="col">Donator's name</th>
+                        <th scope="col">Donation Programs</th>
                         <th scope="col">Email</th>
                         <th scope="col">Address</th>
                         <th scope="col">Massage</th>
@@ -28,6 +29,7 @@
                             <tr>
                                 <th scope="row" style="color: white">1</th>
                                 <td>{{$item->f_name}} {{$item->l_name}}</td>
+                                <td>{{$item->programs}}</td>
                                 <td>{{$item->email}}</td>
                                 <td>{{$item->address}}</td>
                                 <td>{{$item->massage}}</td>

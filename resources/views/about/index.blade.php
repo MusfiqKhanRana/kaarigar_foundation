@@ -6,7 +6,7 @@
         <div class="desc animate-box">
             <h2 style="color: white">We Are <strong>Non-profit</strong></h2>
         
-            <span><a class="btn btn-primary btn-lg" href="#">Donate Now</a></span>
+            <span><a class="btn btn-primary btn-lg" href="{{route('donate')}}">Donate Now</a></span>
         </div>
     
 

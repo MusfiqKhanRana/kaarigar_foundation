@@ -73,7 +73,7 @@
 					<div class="col-md-6 col-sm-6 text-left fh5co-link">
 						{{-- <a href="{{route('contact.index')}}">Contact</a>
 						<a href="{{route('home')}}">Sign-In</a> --}}
-						<ul class="navbar-nav ms-auto">
+						{{-- <ul class="navbar-nav ms-auto">
 							<!-- Authentication Links -->
 							@guest
 								@if (Route::has('login'))
@@ -110,7 +110,7 @@
 									</div>
 								</li>
 							@endguest
-						</ul>
+						</ul> --}}
 					</div>
 					<div class="col-md-6 col-sm-6 text-right fh5co-social">
 						<a href="#" class="grow"><i class="icon-facebook2"></i></a>
@@ -175,22 +175,22 @@
 
 					<div class="col-lg-3 col-md-6 footer-links">
 						<h4 style="color: white"><b>Useful Links</b></h4>
-						<ul class="fh5co-sub-menu">
-						<li><a  style="color: white" href="#">Home</a></li>
-						<li><a  style="color: white" href="#">About us</a></li>
-						<li><a  style="color: white" href="#">Services</a></li>
-						<li><a  style="color: white" href="#">Terms of service</a></li>
-						<li><a  style="color: white" href="#">Privacy policy</a></li>
+						<ul class="footer_ele">
+						<li><a  style="color: white" href="/">Home</a></li>
+						<li><a  style="color: white" href="{{route('about.index')}}">About us</a></li>
+						<li><a  style="color: white" href="{{route('blog.index')}}">Services</a></li>
+						{{-- <li><a  style="color: white" href="#">Terms of service</a></li>
+						<li><a  style="color: white" href="#">Privacy policy</a></li> --}}
 						</ul>
 					</div>
 
 					<div class="col-lg-3 col-md-6 footer-links">
 						<h4 style="color: white"><b>Our Programs</b></h4>
-						<ul class="fh5co-sub-menu">
-						<li><a  style="color: white" href="#">Women Employment</a></li>
-						<li><a  style="color: white" href="#">Child Education</a></li>
-						<li><a  style="color: white" href="#">Natural Disaster</a></li>
-						<li><a  style="color: white" href="#">Proper Parenting</a></li>
+						<ul class="footer_ele">
+						<li><a  style="color: white" href="{{route('programs.women')}}">Women Employment</a></li>
+						<li><a  style="color: white" href="{{route('programs.child')}}">Child Education</a></li>
+						<li><a  style="color: white" href="{{route('programs.disaster')}}">Natural Disaster</a></li>
+						<li><a  style="color: white" href="{{route('programs.parenting')}}">Proper Parenting</a></li>
 						</ul>
 					</div>
 

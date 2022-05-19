@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\BlogPost;
+use App\Models\BlogPosts;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -14,7 +16,10 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view('blog.index');
+        $blogs=Blog::first();
+        // dd($blogs);
+        $posts=BlogPost::all();
+        return view('blog.index',compact('blogs','posts'));
     }
 
     /**
@@ -35,7 +40,7 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-       dd($request);
+    //    dd($request->toArray());
     //    $request->validate([
     //         'b_img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     //         'blogs_img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
@@ -48,18 +53,10 @@ class BlogController extends Controller
             $request->b_img = "$b_img";
         }
         // dd($data);
-        if ($image = $request->blogs_img) {
-            $destinationPathxx = 'images/blog_images';
-            $blogs_img = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPathxx, $blogs_img);
-            $request->blogs_img = "$blogs_img";
-        }
         Blog::create([
             'b_img'=>$request->b_img,
             'tag_line'=>$request->tag_line,
             'quote_line'=>$request->quote_line,
-            'blogs_img' =>$request->blogs_img,
-            'blogs_content' =>$request->blogs_content
         ]);
         return redirect()->back()->withmsg('Successfully Done');
     }
@@ -109,6 +106,17 @@ class BlogController extends Controller
         //
     }
     public function blog_posts(Request $request){
-        dd($request);
+        // dd($request);
+        if ($image = $request->blogs_img) {
+            $destinationPathxx = 'images/blog_images';
+            $blogs_img = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPathxx, $blogs_img);
+            $request->blogs_img = "$blogs_img";
+        }
+        BlogPost::create([
+            'blogs_img' =>$request->blogs_img,
+            'blogs_content' =>$request->blogs_content
+        ]);
+        return redirect()->back()->withmsg('Successfully Done');
     }
 }

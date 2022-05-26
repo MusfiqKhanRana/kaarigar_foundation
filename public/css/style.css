@@ -234,7 +234,7 @@ figure {
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 1;
+  z-index: 0;
   background: rgba(66, 64, 64, 0.9);
   background: rgba(0, 0, 0, 0.2);
 }
@@ -245,7 +245,7 @@ figure {
 }
 @media screen and (max-width: 768px) {
   .fh5co-cover {
-    heifght: inherit;
+    height: inherit;
     padding: 3em 0;
   }
 }
@@ -275,7 +275,7 @@ figure {
 .desc{
   position:relative;
   position:absolute;
-  z-index:9999;
+  z-index:1;
   top: 40%;
   margin-top:0px;
   margin-left: 40%;
@@ -484,7 +484,7 @@ figure {
 
 #fh5co-menu-wrap {
   position: relative;
-  z-index: 2;
+  z-index: 5;
   display: block;
   float: right;
   margin-top: 15px;

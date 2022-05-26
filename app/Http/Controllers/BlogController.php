@@ -18,7 +18,7 @@ class BlogController extends Controller
     {
         $blogs=Blog::first();
         // dd($blogs);
-        $posts=BlogPost::all();
+        $posts=BlogPost::latest()->paginate(6);
         return view('blog.index',compact('blogs','posts'));
     }
 
@@ -114,6 +114,25 @@ class BlogController extends Controller
             $request->blogs_img = "$blogs_img";
         }
         BlogPost::create([
+            'blogs_img' =>$request->blogs_img,
+            'blogs_content' =>$request->blogs_content
+        ]);
+        return redirect()->back()->withmsg('Successfully Done');
+    }
+    public function blog_posts_delete($id){
+        // dd($id);
+        BlogPost::where('id',$id)->delete();
+        return redirect()->back()->withmsg('Successfully Done');
+    }
+    public function blog_posts_update(Request $request){
+        // dd($request);
+        if ($image = $request->blogs_img) {
+            $destinationPathxx = 'images/blog_images';
+            $blogs_img = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPathxx, $blogs_img);
+            $request->blogs_img = "$blogs_img";
+        }
+        BlogPost::where('id',$request->id)->update([
             'blogs_img' =>$request->blogs_img,
             'blogs_content' =>$request->blogs_content
         ]);

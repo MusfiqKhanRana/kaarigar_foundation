@@ -24,6 +24,8 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::resource('/',IndexController::class);
 Route::resource('about',AboutController::class);
+Route::post('blog/blog_posts/update',[BlogController::class,'blog_posts_update'])->name('blog.blog_posts.update');
+Route::get('blog/blog_posts/delete/{id}',[BlogController::class,'blog_posts_delete'])->name('blog.blog_posts.delete');
 Route::post('blog/blog_posts',[BlogController::class,'blog_posts'])->name('blog.blog_posts');
 Route::resource('blog',BlogController::class);
 Route::get('admindashboard/donate_show',[AdminDashBoardController::class,'donate_page'])->name('admindashboard.show.donate');
@@ -38,6 +40,7 @@ Route::get('admindashboard/pages',[AdminDashBoardController::class,'pages'])->na
 Route::resource('admindashboard',AdminDashBoardController::class);
 Route::post('contact/store',[ContactController::class,'contact_store'])->name('contacts.store');
 Route::resource('contact',ContactController::class);
+Route::get('donation-Show/{id}',[IndexController::class,'show_donation'])->name('donation.show');
 Route::get('Donate',[IndexController::class,'donate'])->name('donate');
 Route::get('disaster',[IndexController::class,'disaster'])->name('programs.disaster');
 Route::get('women',[IndexController::class,'women'])->name('programs.women');

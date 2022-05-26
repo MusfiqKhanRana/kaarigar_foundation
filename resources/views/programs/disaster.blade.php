@@ -5,6 +5,7 @@
         <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/a8.jpeg);  filter: blur(2px);  -webkit-filter: blur(2px);"></div>
             <div class="desc animate-box" style="margin-left: 0% !important;">
                 <h1 style="color: white;font-size:60px"><strong>We cannot stop natural disasters but we can arm ourselves.</strong></h1>
+                <span><a class="btn btn-primary btn-lg" style="z-index: 0"  href="{{route('donate')}}">Donate Now</a></span>
             </div>
     </div>
     <div id="fh5co-feature-product" class="fh5co-section-gray">

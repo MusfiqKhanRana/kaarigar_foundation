@@ -5,6 +5,7 @@
         <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/a15.jpeg);  filter: blur(2px);  -webkit-filter: blur(2px);"></div>
             <div class="desc animate-box" style="margin-left: 0% !important;">
                 <h1 style="color: white;font-size:60px"><strong>“He who opens a school door, closes a prison.”</strong></h1>
+                <span><a class="btn btn-primary btn-lg" style="z-index: 0"  href="{{route('donate')}}">Donate Now</a></span>
             </div>
     </div>
     <div id="fh5co-feature-product" class="fh5co-section-gray">

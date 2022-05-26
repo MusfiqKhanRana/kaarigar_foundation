@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\AdminDashBoard;
+use App\Models\Blog;
+use App\Models\BlogPost;
 use App\Models\Contact;
 use App\Models\Donate;
 use Illuminate\Http\Request;
@@ -105,7 +107,10 @@ class AdminDashBoardController extends Controller
         return view('admin_pages.about_page_edit');
     }
     public function blog_page_edit(){
-        return view('admin_pages.blog_page_edit');
+        $blogs=Blog::first();
+        // dd($blogs);
+        $posts=BlogPost::latest()->paginate(6);
+        return view('admin_pages.blog_page_edit',compact('blogs','posts'));
     }
     public function donate_page(){
         $donate=Donate::all();

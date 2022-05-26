@@ -75,8 +75,8 @@
 						<a href="{{route('home')}}">Sign-In</a>
 					</div>
 					<div class="col-md-6 col-sm-6 text-right fh5co-social">
-						<a href="#" class="grow"><i class="icon-facebook2"></i></a>
-						<a href="#" class="grow"><i class="icon-twitter2"></i></a>
+						<a href="https://www.facebook.com/kaarigarfoundation/" class="grow"><i class="icon-facebook2"></i></a>
+						<a href="https://youtube.com/channel/UCmILcPd7RWvo9UR1m-Hj2Bw" class="grow"><i class="icon-youtube2"></i></a>
 						<a href="#" class="grow"><i class="icon-instagram2"></i></a>
 					</div>
 				</div>
@@ -133,16 +133,17 @@
 		
 
 		<div class="fh5co-hero">
-			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/kf2.jpeg);  filter: blur(2px);  -webkit-filter: blur(2px);"></div>
-			<video class="fh5co-cover text-center" data-stellar-background-ratio="0.5" filter: blur(2px);  -webkit-filter: blur(2px); playsinline autoplay muted loop poster="images/kf2.jpeg">
-				<source src="videos/Zakat.mp4" type="video/mp4">
-				Your browser does not support the video tag.
-			</video>
-				<div class="desc animate-box" style="z-index:- 10!important">
+			<div class="fh5co-cover fh5co-overlay">
+				<video class="text-center" style="margin-top:0px;background-size: cover;width:100%;" playsinline autoplay muted loop poster="images/kf2.jpeg">
+					<source src="videos/Zakat.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+			</div>
+			{{-- <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/kf2.jpeg);  filter: blur(2px);  -webkit-filter: blur(2px);"></div> --}}
+				<div class="desc animate-box" style="z-index:0!important">
 					<h2 style="color: white"><strong>Donate</strong> for the <strong>Poor Children</strong></h2>
 				
-					<span><a class="btn btn-primary btn-lg"  href="{{route('donate')}}">Donate Now</a></span>
+					<span><a class="btn btn-primary btn-lg" style="z-index: 0"  href="{{route('donate')}}">Donate Now</a></span>
 				</div>
 			
 

@@ -5,6 +5,7 @@
         <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/a40.jpeg);  filter: blur(2px);  -webkit-filter: blur(2px);"></div>
             <div class="desc animate-box" style="margin-left: 0% !important;">
                 <h1 style="color: white;font-size:50px"><strong>Money isn't the most important thing in life, but it's reasonably close to oxygen on the 'gotta have it' scale.”</strong></h1>
+                <span><a class="btn btn-primary btn-lg" style="z-index: 0"  href="{{route('donate')}}">Donate Now</a></span>
             </div>
     </div>
     <div class="container" style="padding: 5%">

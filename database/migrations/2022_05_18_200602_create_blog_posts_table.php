@@ -17,6 +17,7 @@ class CreateBlogPostsTable extends Migration
             $table->id();
             $table->text('blogs_img')->nullable();
             $table->longText('blogs_content')->nullable();
+            $table->text('blog_post')->nullable();
             $table->timestamps();
         });
     }

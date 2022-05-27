@@ -95,13 +95,22 @@ class AdminDashBoardController extends Controller
         return view('admin_pages.index_page_edit');
     }
     public function programs_page_edit(){
-        return view('admin_pages.programs_page_edit');
+        $blogs=Blog::first();
+        // dd($blogs);
+        $posts=BlogPost::latest()->paginate(6);
+        return view('admin_pages.programs_page_edit',compact('blogs','posts'));
     }
     public function get_involve_page_edit(){
-        return view('admin_pages.get_involve_page_edit');
+        $blogs=Blog::first();
+        // dd($blogs);
+        $posts=BlogPost::latest()->paginate(6);
+        return view('admin_pages.get_involve_page_edit',compact('blogs','posts'));
     }
     public function projects_page_edit(){
-        return view('admin_pages.projects_page_edit');
+        $blogs=Blog::first();
+        // dd($blogs);
+        $posts=BlogPost::latest()->paginate(6);
+        return view('admin_pages.projects_page_edit',compact('blogs','posts'));
     }
     public function about_page_edit(){
         return view('admin_pages.about_page_edit');
@@ -109,7 +118,7 @@ class AdminDashBoardController extends Controller
     public function blog_page_edit(){
         $blogs=Blog::first();
         // dd($blogs);
-        $posts=BlogPost::latest()->paginate(6);
+        $posts=BlogPost::where('status','blog_post')->latest()->paginate(6);
         return view('admin_pages.blog_page_edit',compact('blogs','posts'));
     }
     public function donate_page(){

@@ -53,6 +53,20 @@
                   </div>
               </div> 
         </div>
+        <div class="row">
+          @foreach ($posts as $item)
+            <div class="col-md-4">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top zoom" src="{{ url('images/blog_images/'.$item->blogs_img) }}" height="150px" width="220px" alt="Card image cap"><br>
+                <div class="card-body">
+                  <h3 style="font-size: 25px" class="card-title"><b>AmbagPathshala</b></h3>
+                  <p class="card-text">{{$item->blogs_content}}</p>
+                  {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+                </div>
+              </div>
+            </div>
+          @endforeach
+        </div>
     </div>
     <div style="padding: 5%">
         <div class="container">

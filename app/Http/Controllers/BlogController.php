@@ -18,7 +18,7 @@ class BlogController extends Controller
     {
         $blogs=Blog::first();
         // dd($blogs);
-        $posts=BlogPost::latest()->paginate(6);
+        $posts=BlogPost::where('status','blog_post')->latest()->paginate(6);
         return view('blog.index',compact('blogs','posts'));
     }
 
@@ -92,7 +92,7 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**
@@ -105,6 +105,22 @@ class BlogController extends Controller
     {
         //
     }
+    public function blog_update(Request $request){
+        // dd($request);
+        if ($image = $request->b_img) {
+            $destinationPath = 'images/blog_images';
+            $b_img = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $b_img);
+            $request->b_img = "$b_img";
+        }
+        // dd($data);
+        Blog::where('id',$request->id)->update([
+            'b_img'=>$request->b_img,
+            'tag_line'=>$request->tag_line,
+            'quote_line'=>$request->quote_line,
+        ]);
+        return redirect()->back()->withmsg('Successfully Done');
+    }
     public function blog_posts(Request $request){
         // dd($request);
         if ($image = $request->blogs_img) {
@@ -115,7 +131,8 @@ class BlogController extends Controller
         }
         BlogPost::create([
             'blogs_img' =>$request->blogs_img,
-            'blogs_content' =>$request->blogs_content
+            'blogs_content' =>$request->blogs_content,
+            'status' => $request->status
         ]);
         return redirect()->back()->withmsg('Successfully Done');
     }

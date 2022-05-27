@@ -34,9 +34,10 @@
                   </div>
                 @else
                 <div class="col-md-12">
-                  <form method="POST" action="#" enctype="multipart/form-data">
+                  <form method="POST" action="{{route('blog.blog_update',$blogs->id)}}" enctype="multipart/form-data">
                       @csrf
                       <div class="mb-4">
+                        <input type="hidden" name="id" value="{{$blogs->id}}">
                           <img class="img-responsive form-control-file" src="{{ url('images/blog_images/'.$blogs->b_img) }}" alt="" width="auto" height="200px !important">
                           <label for="exampleFormControlFile1">Background Image Upload*</label>
                           <input type="file" name="b_img" class="form-control-file" >
@@ -63,6 +64,7 @@
                     <form method="POST" action="{{route('blog.blog_posts')}}" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-4">
+                            <input type="hidden" name="status" value="blog_post">
                             <label for="exampleFormControlFile1">Blogs Image Upload*</label>
                             <input type="file" name="blogs_img" class="form-control-file">
                         </div>

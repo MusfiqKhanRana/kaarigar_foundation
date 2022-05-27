@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BlogPost;
 use App\Models\Donate;
 use Illuminate\Http\Request;
 
@@ -116,21 +117,27 @@ class IndexController extends Controller
         return view('get_involved.campaign');
     }
     public function ambagpathshala(){
-        return view('projects.ambagpathshala');
+        $posts=BlogPost::where('status','ambaagpathshala')->latest()->paginate(3);
+        return view('projects.ambagpathshala',compact('posts'));
     }
     public function sewingmachine(){
-        return view('projects.sewingmachine');
+        $posts=BlogPost::where('status','sewing_machine_course')->latest()->paginate(3);
+        return view('projects.sewingmachine',compact('posts'));
     }
     public function oxygenbank(){
-        return view('projects.oxygenbank');
+        $posts=BlogPost::where('status','oxygen_bank')->latest()->paginate(3);
+        return view('projects.oxygenbank',compact('posts'));
     }
     public function zakatdistribution(){
-        return view('projects.zakatdistribution');
+        $posts=BlogPost::where('status','zakat_distribution')->latest()->paginate(3);
+        return view('projects.zakatdistribution',compact('posts'));
     }
     public function ramadanproject(){
-        return view('projects.ramadanproject');
+        $posts=BlogPost::where('status','ramadan_projects')->latest()->paginate(3);
+        return view('projects.ramadanproject',compact('posts'));
     }
     public function disastersnothers(){
-        return view('projects.disastersnothers');
+        $posts=BlogPost::where('status','disaster_n_others')->latest()->paginate(3);
+        return view('projects.disastersnothers',compact('posts'));
     }
 }

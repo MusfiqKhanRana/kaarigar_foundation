@@ -92,7 +92,10 @@ class AdminDashBoardController extends Controller
     }
 
     public function index_page_edit(){
-        return view('admin_pages.index_page_edit');
+        $blogs=Blog::first();
+        // dd($blogs);
+        $posts=BlogPost::latest()->paginate(6);
+        return view('admin_pages.index_page_edit',compact('blogs','posts'));
     }
     public function programs_page_edit(){
         $blogs=Blog::first();

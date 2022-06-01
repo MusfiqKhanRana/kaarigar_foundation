@@ -72,7 +72,7 @@
 				<div class="row">
 					<div class="col-md-6 col-sm-6 text-left fh5co-link">
 						<a href="{{route('contact.index')}}">Contact</a>
-						<a href="{{route('home')}}">Sign-In</a>
+						{{-- <a href="{{route('home')}}">Sign-In</a> --}}
 					</div>
 					<div class="col-md-6 col-sm-6 text-right fh5co-social">
 						<a href="https://www.facebook.com/kaarigarfoundation/" class="grow"><i class="icon-facebook2"></i></a>
@@ -140,7 +140,7 @@
 						<ul class="footer_ele">
 						<li><a  style="color: white" href="/">Home</a></li>
 						<li><a  style="color: white" href="{{route('about.index')}}">About us</a></li>
-						<li><a  style="color: white" href="{{route('blog.index')}}">Services</a></li>
+						<li><a  style="color: white" href="{{route('at_a_glance')}}">At a Glance</a></li>
 						{{-- <li><a  style="color: white" href="#">Terms of service</a></li>
 						<li><a  style="color: white" href="#">Privacy policy</a></li> --}}
 						</ul>

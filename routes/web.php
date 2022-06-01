@@ -41,6 +41,7 @@ Route::get('admindashboard/pages',[AdminDashBoardController::class,'pages'])->na
 Route::resource('admindashboard',AdminDashBoardController::class);
 Route::post('contact/store',[ContactController::class,'contact_store'])->name('contacts.store');
 Route::resource('contact',ContactController::class);
+Route::get('at_a_glance',[IndexController::class,'at_a_glance'])->name('at_a_glance');
 Route::get('donation-Show/{id}',[IndexController::class,'show_donation'])->name('donation.show');
 Route::get('Donate',[IndexController::class,'donate'])->name('donate');
 Route::get('disaster',[IndexController::class,'disaster'])->name('programs.disaster');
@@ -57,4 +58,4 @@ Route::get('disastersnothers',[IndexController::class,'disastersnothers'])->name
 Route::post('donate/submit',[IndexController::class,'donate_submit'])->name('donate.submit');
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin-login-kf', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

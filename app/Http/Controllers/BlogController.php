@@ -130,6 +130,7 @@ class BlogController extends Controller
             $request->blogs_img = "$blogs_img";
         }
         BlogPost::create([
+            'title' => $request->title,
             'blogs_img' =>$request->blogs_img,
             'blogs_content' =>$request->blogs_content,
             'status' => $request->status
@@ -150,6 +151,7 @@ class BlogController extends Controller
             $request->blogs_img = "$blogs_img";
         }
         BlogPost::where('id',$request->id)->update([
+            'title' => $request->title,
             'blogs_img' =>$request->blogs_img,
             'blogs_content' =>$request->blogs_content
         ]);

@@ -116,6 +116,10 @@ class IndexController extends Controller
     public function campaign(){
         return view('get_involved.campaign');
     }
+    public function at_a_glance(){
+        $posts=BlogPost::where('status','at_a_glance')->latest()->get();
+        return view('at_a_glance',compact('posts'));
+    }
     public function ambagpathshala(){
         $posts=BlogPost::where('status','ambaagpathshala')->latest()->paginate(3);
         return view('projects.ambagpathshala',compact('posts'));
